@@ -1,0 +1,16 @@
+/*
+Viewports:
+telefoon: 0px - 767px
+tablet: 768px - 1249px
+desktop: 1250px - Infinity px
+*/
+
+:root {
+    --main-bg: #252525;
+    --main-bg-lighter: #353535;
+    --main-bg-darker: #151515;
+
+    --main-fg: #ffffff;
+
+    --header-height: 4em;
+}

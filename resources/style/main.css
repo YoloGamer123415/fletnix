@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg);
+    color: var(--main-fg);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ------ HEADER ------ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--main-bg-darker);
+    box-shadow: 0 .15em .3em rgba(0, 0, 0, .25);
+    z-index: 100;
+}
+
+header nav {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ------ HEADER - left link to homepage ------ */
+header nav div.left {
+    float: left;
+    height: 100%;
+}
+
+header nav div.left a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1em;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+/* ------HEADER - menu button ------ */
+header nav label.menu-btn {
+    display: none;
+}
+
+header nav label.menu-btn label.btn {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    header nav label.menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: right;
+        width: var(--header-height);
+        height: 100%;
+        cursor: pointer;
+    }
+
+    header nav label.menu-btn span.btn {
+        display: block;
+        position: relative;
+        width: 65%;
+        height: 5%;
+        color: var(--main-fg);
+        background-image: linear-gradient(currentColor, currentColor);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center right;
+        border-radius: .3em;
+        transform: scale(1);
+        transition:
+            transform .3s ease,
+            background-size .3s ease;
+    }
+
+    header nav label.menu-btn span.btn::before,
+    header nav label.menu-btn span.btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: inherit;
+        border-radius: inherit;
+        transition: inherit;
+    }
+
+    header nav label.menu-btn span.btn::before {
+        transform: translateY(-350%);
+    }
+
+    header nav label.menu-btn span.btn::after {
+        transform: translateY(350%);
+    }
+
+    header nav input[type="checkbox"]:checked + label.menu-btn span.btn {
+        background-size: 0 100%;
+    }
+
+    header nav input[type="checkbox"]:checked + label.menu-btn span.btn::before {
+        transform: rotate(-45deg) translateY(0);
+    }
+
+    header nav input[type="checkbox"]:checked + label.menu-btn span.btn::after {
+        transform: rotate(45deg) translateY(0);
+    }
+}
+
+/* ------ HEADER - right/dropdown menu ------ */
+@media only screen and (max-width: 767px) {
+    header nav div.right {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Under the header element */
+        left: 100%; /* initial position, when menu-btn is toggled, it slides out to the left (left: 0) */
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background-color: var(--main-bg);
+        box-shadow: inset 0 .15em .3em rgba(0, 0, 0, .25); /* Element overlaps header shadow, so this way it looks like there is still a shadow */
+        transition: left .3s ease;
+        overflow: auto;
+    }
+    
+    /* No idea why ~ does work and + doesn't */
+    header nav input[type="checkbox"]:checked ~ div.right {
+        left: 0;
+    }
+
+    header nav div.right ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    header nav div.right ul li:not(:first-of-type) {
+        border-top: solid .1em var(--main-bg-lighter);
+    }
+
+    header nav div.right ul li a {
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        /* height: 100%; */
+        padding: 1em;
+        color: var(--main-fg);
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header nav div.right {
+        display: flex;
+        flex-direction: row;
+        float: right;
+        height: 100%;
+    }
+
+    header nav div.right ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1em;
+        padding: 0;
+    }
+
+    header nav div.right ul li {
+        height: 100%;
+    }
+    
+    header nav div.right ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 1em;
+        color: var(--main-fg);
+        text-decoration: none;
+    }
+}
+
+/* ------ MAIN ------ */
+main {
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+}
+
+main div.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em 0;
+}
+
+@media only screen and (min-width: 768px) {
+    main div.container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    main div.container {
+        width: 55%;
+    }
+}
+
+/* ------ FOOTER ------ */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    background-color: var(--main-bg-darker);
+    text-align: center;
+}
