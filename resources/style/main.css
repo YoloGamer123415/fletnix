@@ -44,6 +44,10 @@ header nav div.left a {
     text-decoration: none;
 }
 
+header nav div.left a img {
+    max-height: 50%;
+}
+
 /* ------HEADER - menu button ------ */
 header nav label.menu-btn {
     display: none;
@@ -211,7 +215,7 @@ main div.container {
 
 @media only screen and (min-width: 1250px) {
     main div.container {
-        width: 55%;
+        width: 90%;
     }
 }
 
