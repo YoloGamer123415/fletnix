@@ -135,7 +135,6 @@ header nav label.menu-btn label.btn {
         overflow: auto;
     }
     
-    /* No idea why ~ does work and + doesn't */
     header nav input[type="checkbox"]:checked ~ div.right {
         left: 0;
     }
