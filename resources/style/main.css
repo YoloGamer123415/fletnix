@@ -41,6 +41,8 @@ header nav div.left {
 }
 
 header nav div.left a {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -65,6 +67,8 @@ header nav label.menu-btn label.btn {
 
 @media only screen and (max-width: 767px) {
 	header nav label.menu-btn {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -129,6 +133,8 @@ header nav label.menu-btn label.btn {
 /* PHONE */
 @media only screen and (max-width: 767px) {
 	header nav div.right {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		flex-direction: column;
 		position: absolute;
@@ -160,6 +166,8 @@ header nav label.menu-btn label.btn {
 	}
 
 	header nav div.right > ul > li a {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		align-items: center;
 		padding: 1em;
@@ -185,6 +193,8 @@ header nav label.menu-btn label.btn {
 /* TABLET AND DESKTOP */
 @media only screen and (min-width: 768px) {
 	header nav div.right {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		flex-direction: row;
 		float: right;
@@ -194,6 +204,8 @@ header nav label.menu-btn label.btn {
 
 	header nav div.right > ul {
 		list-style-type: none;
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -226,6 +238,8 @@ header nav label.menu-btn label.btn {
 	}
 	
 	header nav div.right > ul > li > a {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -301,6 +315,8 @@ main div.container {
 
 /* ------ FOOTER ------ */
 footer {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
 	justify-content: center;
