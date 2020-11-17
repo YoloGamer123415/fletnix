@@ -224,7 +224,7 @@ header nav label.menu-btn label.btn {
 		height: 5%;
 		background-color: var(--main-secundairy);
 		transform: scaleX(0);
-		transform-origin: right center;
+		transform-origin: left center;
 		transition: transform .3s ease;
 	}
 
