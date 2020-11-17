@@ -21,8 +21,8 @@ header {
 	left: 0;
 	width: 100%;
 	height: var(--header-height);
-	background-color: var(--main-bg-darker);
-	box-shadow: 0 .15em .3em rgba(0, 0, 0, .25);
+	background-color: var(--main-bg);
+	box-shadow: 0 .3em .5em rgba(0, 0, 0, .25);
 	z-index: 100;
 }
 
@@ -49,7 +49,7 @@ header nav div.left a {
 }
 
 header nav div.left a img {
-	max-height: 50%;
+	max-height: 40%;
 }
 
 /* ------HEADER - menu button ------ */
@@ -124,6 +124,7 @@ header nav label.menu-btn label.btn {
 }
 
 /* ------ HEADER - right/dropdown menu ------ */
+/* PHONE */
 @media only screen and (max-width: 767px) {
 	header nav div.right {
 		display: flex;
@@ -134,7 +135,8 @@ header nav label.menu-btn label.btn {
 		width: 100%;
 		height: calc(100vh - var(--header-height));
 		background-color: var(--main-bg);
-		box-shadow: inset 0 .15em .3em rgba(0, 0, 0, .25); /* Element overlaps header shadow, so this way it looks like there is still a shadow */
+		box-shadow: inset 0 .3em .5em rgba(0, 0, 0, .25); /* Element overlaps header shadow, so this way it looks like there is still a shadow */
+		font-weight: bold;
 		transition: left .3s ease;
 		overflow: auto;
 	}
@@ -143,7 +145,7 @@ header nav label.menu-btn label.btn {
 		left: 0;
 	}
 
-	header nav div.right ul {
+	header nav div.right > ul {
 		list-style-type: none;
 		display: flex;
 		flex-direction: column;
@@ -151,30 +153,44 @@ header nav label.menu-btn label.btn {
 		padding: 0;
 	}
 
-	header nav div.right ul li:not(:first-of-type) {
+	header nav div.right > ul > li:not(:first-of-type) {
 		border-top: solid .1em var(--main-bg-lighter);
 	}
 
-	header nav div.right ul li a {
+	header nav div.right > ul > li a {
 		display: flex;
 		align-items: center;
-		/* justify-content: center; */
-		/* height: 100%; */
 		padding: 1em;
 		color: var(--main-fg);
 		text-decoration: none;
 	}
+
+	header nav div.right > ul > li > ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	header nav div.right > ul > li > ul li {
+		border-top: solid .1em var(--main-bg-lighter);
+	}
+
+	header nav div.right > ul > li > ul li a {
+		padding: .5em;
+		padding-left: 2em;
+	}
 }
 
+/* TABLET AND DESKTOP */
 @media only screen and (min-width: 768px) {
 	header nav div.right {
 		display: flex;
 		flex-direction: row;
 		float: right;
 		height: 100%;
+		font-weight: bold;
 	}
 
-	header nav div.right ul {
+	header nav div.right > ul {
 		list-style-type: none;
 		display: flex;
 		align-items: center;
@@ -183,11 +199,31 @@ header nav label.menu-btn label.btn {
 		padding: 0;
 	}
 
-	header nav div.right ul li {
+	header nav div.right > ul > li {
+		position: relative;
+		min-width: 10em;
 		height: 100%;
 	}
+
+	header nav div.right > ul > li::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 5%;
+		background-color: var(--main-secundairy);
+		transform: scaleX(0);
+		transform-origin: right center;
+		transition: transform .3s ease;
+	}
+
+	header nav div.right > ul > li:hover::after {
+		transform: scaleX(1);
+		transform-origin: left center;
+	}
 	
-	header nav div.right ul li a {
+	header nav div.right > ul > li > a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -195,6 +231,45 @@ header nav label.menu-btn label.btn {
 		padding: 0 1em;
 		color: var(--main-fg);
 		text-decoration: none;
+	}
+
+	header nav div.right > ul > li > ul {
+		list-style-type: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		max-height: 0px;
+		padding: 0;
+		background-color: var(--main-bg);
+		box-shadow: 0 .1em .3em rgba(0, 0, 0, .25);
+		overflow: hidden;
+	}
+
+	header nav div.right > ul > li:hover > ul {
+		max-height: 100vh;
+	}
+
+	header nav div.right > ul > li > ul > li {
+		width: 100%;
+		height: 100%;
+		text-align: left;
+	}
+	
+	header nav div.right > ul > li > ul > li a {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		padding: .5em 1em;
+		background-color: transparent;
+		color: var(--main-fg);
+		text-decoration: none;
+		transition: background-color .3s ease;
+	}
+
+	header nav div.right > ul > li > ul > li a:hover {
+		background-color: rgba(255, 2555, 255, .15);
 	}
 }
 
@@ -228,6 +303,21 @@ footer {
 	align-items: center;
 	justify-content: center;
 	padding: 1em;
-	background-color: var(--main-bg-darker);
+	background-color: var(--main-secundairy);
+	color: var(--main-fg-secundairy);
 	text-align: center;
+}
+
+footer a {
+	color: inherit;
+}
+
+@media only screen and (min-width: 1250px) {
+	footer a {
+		transition: color .3s ease;
+	}
+
+	footer a:hover {
+		color: rgba(0, 0, 0, .6);
+	}
 }

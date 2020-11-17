@@ -9,8 +9,10 @@ desktop: 1250px - Infinity px
 	--main-bg: #252525;
 	--main-bg-lighter: #353535;
 	--main-bg-darker: #151515;
+	--main-secundairy: #ffb75e;
 
 	--main-fg: #ffffff;
+	--main-fg-secundairy: #000000;
 
 	--header-height: 4em;
 }
