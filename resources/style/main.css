@@ -292,7 +292,7 @@ main {
 }
 
 main div.container {
-	width: calc(100% - 2 * 1em);
+	width: calc(100% - 4 * 1em);
 	margin: 0 auto;
 	padding: 1em 0;
 }
