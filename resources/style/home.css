@@ -1,0 +1,184 @@
+/* ------ WELCOME - welcome ------ */
+main {
+	--welcome-height: 70vh;
+
+	position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+	main {
+		--welcome-height: 60vh;
+	}
+}
+
+@media only screen and (min-width: 1250px) {
+	main {
+		--welcome-height: 50vh;
+	}
+}
+
+main div.welcome {
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: var(--welcome-height);
+	box-sizing: border-box;
+	padding: 2em 0;
+}
+
+main div.welcome div.container h1 {
+	margin: 0;
+	font-size: 2em;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.welcome div.container h1 {
+		font-size: 3em;
+	}
+}
+
+@media only screen and (min-width: 1250px) {
+	main div.welcome div.container h1 {
+		font-size: 4em;
+	}
+}
+
+main div.welcome div.container h1 span.underline {
+	border-bottom: .05em solid var(--main-secundairy);
+}
+
+/* ------ BEST OF FLETNIX ------ */
+main div.best-films {
+	position: relative;
+	width: 100%;
+	margin-top: calc(var(--header-height) + var(--welcome-height));
+	background-color: var(--main-bg-lighter);
+	border-radius: 2.5em 2.5em 0 0;
+	box-shadow: 0 -.3em .5em rgba(0, 0, 0, .25);
+	z-index: 1;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.best-films div.container {
+		width: 70%;
+	}
+}
+
+@media only screen and (min-width: 1250px) {
+	main div.best-films div.container {
+		width: 80%;
+	}
+}
+
+main div.best-films div.container div.films {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 2em;
+	width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.best-films div.container div.films {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1250px) {
+	main div.best-films div.container div.films {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+main div.best-films div.container div.films a.film {
+	position: relative;
+	background-color: red;
+	color: var(--main-fg);
+	border-radius: 1.5em;
+	overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.best-films div.container div.films a.film {
+		height: 40em;
+	}
+}
+
+main div.best-films div.container div.films a.film div.poster {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	transform: scale(1);
+	transition: transform .3s ease;
+}
+
+main div.best-films div.container div.films a.film div.poster img {
+	max-width: 100%;
+}
+
+main div.best-films div.container div.films a.film div.hover {
+	display: none;
+}
+
+@media only screen and (min-width: 1250px) {
+	main div.best-films div.container div.films a.film div.hover {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 1em;
+		background-color: rgba(0, 0, 0, .5);
+		font-weight: bold;
+		text-transform: uppercase;
+		clip-path: inset(100% 100% 0 100%);
+		transition: clip-path .3s ease;
+		z-index: 1;
+	}
+
+	main div.best-films div.container div.films a.film:hover div.hover {
+		clip-path: inset(100% 100% 100% 100%);
+	}
+
+	main div.best-films div.container div.films a.film:hover div.poster {
+		transform: scale(1.1);
+	}
+
+	main div.best-films div.container div.films a.film div.hover div.title {
+		font-size: 2.5em;
+	}
+
+	main div.best-films div.container div.films a.film div.hover div.title-small {
+		font-size: 1.5em;
+	}
+
+	main div.best-films div.container div.films a.film div.hover div.play-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 4em;
+		height: 4em;
+		transform: translateX(-50%) translateY(-50%);
+		color: var(--main-fg);
+		transition: color .3s ease;
+	}
+
+	main div.best-films div.container div.films a.film div.hover div.play-btn:hover {
+		color: var(--main-secundairy);
+	}
+	
+	main div.best-films div.container div.films a.film div.hover div.play-btn svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	main div.best-films div.container div.films a.film div.hover div.playtime {
+		margin-top: auto; /* aligns item on the bottom */
+		font-size: 1.15em;
+	}
+}
