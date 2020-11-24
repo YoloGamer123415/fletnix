@@ -2,6 +2,7 @@ body, html {
 	overflow-x: hidden;
 }
 
+/* ------ TOP TEXT ------ */
 main div.container div.title h1 {
 	margin: 0;
 	font-size: 4em;
@@ -16,6 +17,7 @@ main div.container div.title p.small {
 	font-size: 1.5em;
 }
 
+/* ------ GENRE CONTAINERS ------ */
 main div.container div.genres {
 	display: grid;
 	grid-template-columns: 100%;
@@ -36,6 +38,7 @@ main div.container div.genres div.genre h1.name {
 	font-size: 3em;
 }
 
+/* ------ GENRE CONTAINERS - genre pop out ------ */
 main div.container div.genres div.genre div.genre-bar-wrapper {
 	position: relative;
 	min-height: 16em;
@@ -115,6 +118,7 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 	}
 }
 
+/* ------ GENRE CONTAINERS - actual box ------ */
 main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background {
 	box-sizing: border-box;
 	display: flex;
@@ -129,6 +133,7 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 	-webkit-overflow-scrolling: touch;
 }
 
+/* GENRE CONTAINERS - movie with clickable poster ------ */
 main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film {
 	display: block;
 	flex: 0 0 auto;
@@ -161,7 +166,7 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 @media only screen and (min-width: 1250px) {
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background::after {
 		content: '';
-		/* hacky way to force the padding on the right (from, altered to work: https://chenhuijing.com/blog/flexbox-and-padding/ -> Using the ::after pseudo-element) */
+		/* hacky way to force the padding on the right (from this site, altered to work: https://chenhuijing.com/blog/flexbox-and-padding/ -> Using the ::after pseudo-element) */
 		padding-right: 0.01px;
 	}
 
