@@ -5,8 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="../resources/style/normalize.css" />
 	<link rel="stylesheet" href="../resources/style/variables.css" />
-	<link rel="stylesheet" href="../resources/style/main.css" />
 	<link rel="stylesheet" href="../resources/style/fonts.css" />
+	<link rel="stylesheet" href="../resources/style/main.css" />
+	<link rel="stylesheet" href="../resources/style/genre.css">
 	<title>Fletnix - Films</title>
 </head>
 <body>
@@ -43,12 +44,441 @@
 
 	<main>
 		<div class="container">
-			<h1>Genres</h1>
+			<div class="title">
+				<h1>
+					<span class="underline">Films</span>
+				</h1>
+
+				<p class="small">Check al onze genres!</p>
+			</div>
+
+			<div class="genres">
+				<div class="genre">
+					<h1 class="name">Horror</h1>
+
+					<div class="genre-bar-wrapper">
+						<input type="checkbox" id="genre-horror" hidden>
+
+						<div class="genre-bar">
+							<div class="toggle">
+								<label for="genre-horror">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg>
+								</label>
+							</div>
+
+							<div class="bar-background">
+								<div class="movie"></div>
+								<div class="movie"></div>
+								<div class="movie"></div>
+								<div class="movie"></div>
+								<div class="movie"></div>
+								<div class="movie"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="genre">
+					<h1 class="name">Comedie</h1>
+
+					<div class="genre-bar-wrapper">
+						<input type="checkbox" id="genre-comedie" hidden>
+
+						<div class="genre-bar">
+							<div class="toggle">
+								<label for="genre-comedie">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg>
+								</label>
+							</div>
+
+							<div class="bar-background">
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+
+								<a href="#" class="film">
+									<div class="poster">
+										<img
+											src="../resources/images/movie-posters/avengers_infinity_war.jpg"
+											alt="Avengers infinity war poster"
+										>
+									</div>
+
+									<div class="hover">
+										<div class="title">Avengers</div>
+										<div class="title-small">Infinity War</div>
+
+										<!-- Needs to be a link to the play page, but that's not possible without javascript >:( -->
+										<div class="play-btn">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
+										</div>
+
+										<div class="playtime">1:13</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</main>
 
 	<footer>
-		<span>Created by<a href="https://github.com/YoloGamer132415/" target="_blank">@YoloGamer123415</a>and<a href="https://github.com/idiidk/" target="_blank">@idiidk</a>.</span>
+		<span>Created by <a href="https://github.com/YoloGamer132415/" target="_blank">@YoloGamer123415</a> and <a href="https://github.com/idiidk/" target="_blank">@idiidk</a>.</span>
 	</footer>
 </body>
 </html>
