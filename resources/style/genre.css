@@ -159,6 +159,12 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 }
 
 @media only screen and (min-width: 1250px) {
+	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background::after {
+		content: '';
+		/* hacky way to force the padding on the right (from, altered to work: https://chenhuijing.com/blog/flexbox-and-padding/ -> Using the ::after pseudo-element) */
+		padding-right: 0.01px;
+	}
+
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film div.hover {
 		display: flex;
 		flex-direction: column;
