@@ -151,10 +151,12 @@ main div.best-films div.container div.films a.film div.hover {
 
 	main div.best-films div.container div.films a.film div.hover div.title {
 		font-size: 2.5em;
+		text-align: center;
 	}
 
 	main div.best-films div.container div.films a.film div.hover div.title-small {
 		font-size: 1.5em;
+		text-align: center;
 	}
 
 	main div.best-films div.container div.films a.film div.hover div.play-btn {

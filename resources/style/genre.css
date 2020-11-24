@@ -22,7 +22,7 @@ main div.container div.genres {
 	display: grid;
 	grid-template-columns: 100%;
 	gap: 2em;
-	margin-top: 2em;
+	margin: 2em 0;
 }
 
 main div.container div.genres div.genre {
@@ -199,6 +199,11 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film div.hover div.title {
 		font-size: 1.25em;
+		text-align: center;
+	}
+
+	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film div.hover div.title-small {
+		text-align: center;
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film div.hover div.play-btn {
