@@ -20,7 +20,7 @@ main div.container div.top div.title h1 {
 }
 
 main div.container div.top div.title h1 span.underline {
-	border-bottom: .05em solid var(--main-secundairy);
+	border-bottom: .05em solid var(--main-secondary);
 }
 
 main div.container div.top div.title p.small {
@@ -38,8 +38,8 @@ main div.container div.top div.search-button label {
 	box-sizing: border-box;
 	width: 100%;
 	padding: 1em;
-	background-color: var(--main-secundairy);
-	color: var(--main-fg-secundairy);
+	background-color: var(--main-secondary);
+	color: var(--main-fg-secondary);
 	border-radius: .3em;
 	text-align: center;
 	cursor: pointer;
@@ -92,7 +92,7 @@ main div.container form.search-box input {
 
 	color: var(--main-fg);
 	border: none;
-	border-bottom: 0.2em solid var(--main-secundairy);
+	border-bottom: 0.2em solid var(--main-secondary);
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	background: #2c2c2c;
@@ -111,7 +111,7 @@ main div.container form.search-box button {
 	color: var(--main-bg-darker);
 	border: none;
 	border-radius: 8px;
-	background: var(--main-secundairy);
+	background: var(--main-secondary);
 }
 
 main div.container form.search-box button:hover {
@@ -134,7 +134,7 @@ main div.container form.search-box select {
 	background-color: #2c2c2c;
 	color: var(--main-fg);
 	border: none;
-	border-bottom: .2em solid var(--main-secundairy);
+	border-bottom: .2em solid var(--main-secondary);
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
@@ -254,12 +254,12 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.toggle label:hover {
-		background-color: var(--main-secundairy);
+		background-color: var(--main-secondary);
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.toggle label svg {
 		height: 75%;
-		color: var(--main-fg-secundairy);
+		color: var(--main-fg-secondary);
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background {
@@ -371,7 +371,7 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film div.hover div.play-btn:hover {
-		color: var(--main-secundairy);
+		color: var(--main-secondary);
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film div.hover div.play-btn svg {

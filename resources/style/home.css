@@ -47,7 +47,7 @@ main div.welcome div.container h1 {
 }
 
 main div.welcome div.container h1 span.underline {
-	border-bottom: .05em solid var(--main-secundairy);
+	border-bottom: .05em solid var(--main-secondary);
 }
 
 /* ------ BEST OF FLETNIX ------ */
@@ -163,7 +163,7 @@ main div.best-films div.container div.films a.film div.hover {
 	}
 
 	main div.best-films div.container div.films a.film div.hover div.play-btn:hover {
-		color: var(--main-secundairy);
+		color: var(--main-secondary);
 	}
 	
 	main div.best-films div.container div.films a.film div.hover div.play-btn svg {

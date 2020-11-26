@@ -66,7 +66,7 @@ main div.container div.login button {
 	color: var(--main-bg-darker);
 	border: none;
 	border-radius: 8px;
-	background: var(--main-secundairy);
+	background: var(--main-secondary);
 }
 
 main div.container div.login button:hover {
@@ -91,7 +91,7 @@ main div.container div.login div.box input {
 
 	color: var(--main-fg);
 	border: none;
-	border-bottom: 0.2em solid var(--main-secundairy);
+	border-bottom: 0.2em solid var(--main-secondary);
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	background: #2c2c2c;
@@ -113,7 +113,7 @@ main div.container div.login div.title p {
 }
 
 main div.container div.login div.title p a {
-	color: var(--main-secundairy);
+	color: var(--main-secondary);
 }
 
 main div.container div.login div.title h1 {
@@ -123,5 +123,5 @@ main div.container div.login div.title h1 {
 }
 
 main div.container div.login div.title h1 span.underline {
-	border-bottom: 0.1em solid var(--main-secundairy);
+	border-bottom: 0.1em solid var(--main-secondary);
 }
