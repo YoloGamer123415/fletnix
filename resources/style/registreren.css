@@ -1,123 +1,123 @@
 main div.container div.register {
-  position: absolute;
-  top: 50%;
+	position: absolute;
+	top: 50%;
 
-  display: flex;
+	display: flex;
 
-  width: calc(100% - 4 * 1em);
+	width: calc(100% - 4 * 1em);
 
-  transform: translateY(-50%);
+	transform: translateY(-50%);
 
-  justify-content: space-between;
-  flex-wrap: wrap;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 @media only screen and (min-width: 768px) {
-  main div.container div.register {
-    width: 80%;
+	main div.container div.register {
+		width: 80%;
 
-    flex-wrap: nowrap;
-  }
+		flex-wrap: nowrap;
+	}
 
-  main div.container div.register div.box {
-    width: 75vw;
-    margin-top: 0;
-    padding: 25px;
+	main div.container div.register div.box {
+		width: 75vw;
+		margin-top: 0;
+		padding: 25px;
 
-    background: var(--main-bg-lighter);
-  }
+		background: var(--main-bg-lighter);
+	}
 
-  main div.container div.register div.title {
-    width: 100%;
-  }
+	main div.container div.register div.title {
+		width: 100%;
+	}
 }
 
 @media only screen and (min-width: 1250px) {
-  main div.container div.register {
-    width: 90%;
+	main div.container div.register {
+		width: 90%;
 
-    flex-wrap: nowrap;
-  }
+		flex-wrap: nowrap;
+	}
 
-  main div.container div.register div.box {
-    width: 75vw;
-    min-height: 25vh;
-    margin-top: 0;
-    padding: 35px;
+	main div.container div.register div.box {
+		width: 75vw;
+		min-height: 25vh;
+		margin-top: 0;
+		padding: 35px;
 
-    background: var(--main-bg-lighter);
-  }
+		background: var(--main-bg-lighter);
+	}
 }
 
 main div.container div.register div.box {
-  margin-top: 15px;
+	margin-top: 15px;
 
-  border-radius: 30px;
+	border-radius: 30px;
 }
 
 main div.container div.register button {
-  width: 100%;
-  height: 50px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+	margin-bottom: 15px;
 
-  transition: all 0.2s;
+	transition: all 0.2s;
 
-  color: var(--main-bg-darker);
-  border: none;
-  border-radius: 8px;
-  background: var(--main-secundairy);
+	color: var(--main-bg-darker);
+	border: none;
+	border-radius: 8px;
+	background: var(--main-secundairy);
 }
 
 main div.container div.register button:hover {
-  cursor: pointer;
-  transform: scale(0.97);
+	cursor: pointer;
+	transform: scale(0.97);
 
-  outline: none;
+	outline: none;
 }
 
 main div.container div.register button:active {
-  cursor: pointer;
-  transform: scale(0.95);
+	cursor: pointer;
+	transform: scale(0.95);
 
-  outline: none;
+	outline: none;
 }
 
 main div.container div.register div.box input {
-  width: calc(100% - 30px);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 1em;
+	width: calc(100% - 30px);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 1em;
 
-  color: grey;
-  border: none;
-  border-bottom: 0.2em solid var(--main-secundairy);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background: #2c2c2c;
+	color: grey;
+	border: none;
+	border-bottom: 0.2em solid var(--main-secundairy);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background: #2c2c2c;
 }
 
 main div.container div.register div.title {
-  margin: auto;
-  margin-left: 0;
+	margin: auto;
+	margin-left: 0;
 }
 
 main div.container div.register div.title p {
-  font-size: 1.25em;
+	font-size: 1.25em;
 
-  margin-top: 0;
+	margin-top: 0;
 }
 
 main div.container div.register div.title p a {
-  color: var(--main-secundairy);
+	color: var(--main-secundairy);
 }
 
 main div.container div.register div.title h1 {
-  font-size: 3em;
+	font-size: 3em;
 
-  margin: 0;
+	margin: 0;
 }
 
 main div.container div.register div.title h1 span.underline {
-  border-bottom: 0.1em solid var(--main-secundairy);
+	border-bottom: 0.1em solid var(--main-secundairy);
 }
