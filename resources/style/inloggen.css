@@ -89,12 +89,16 @@ main div.container div.login div.box input {
 	margin-bottom: 15px;
 	padding: 1em;
 
-	color: grey;
+	color: var(--main-fg);
 	border: none;
 	border-bottom: 0.2em solid var(--main-secundairy);
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	background: #2c2c2c;
+}
+
+main div.container div.login div.box input::placeholder {
+	color: #cccccc;
 }
 
 main div.container div.login div.title {

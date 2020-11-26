@@ -54,17 +54,102 @@ main div.container div.top div.search-button label {
 
 /* ------ SEARCH BOX ------ */
 main div.container form.search-box {
+	display: grid;
+	grid-template:
+		'title' 1fr
+		'director' 1fr
+		'genre' 1fr
+		'year' 1fr
+		'submit' 1fr
+		/ 100%;
+	/* gap: 1em; */
+	/* width: calc(100% - 1em); */
 	max-height: 0;
-	background-color: red;
-	overflow: hidden;
+	overflow-y: hidden;
 	transition:
 		max-height .3s ease,
 		padding .3s ease;
 }
 
+@media only screen and (min-width: 768px) {
+	main div.container form.search-box {
+		grid-template:
+			'title director' 1fr
+			'genre year' 1fr
+			'submit submit' 1fr
+			/ 50% 50%;
+	}
+}
+
 main div.container input[type="checkbox"]#search-box:checked + form.search-box {
 	max-height: 100vh;
 	padding: 2em 0 1em;
+}
+
+main div.container form.search-box input {
+	width: calc(100% - 30px);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 1em;
+
+	color: var(--main-fg);
+	border: none;
+	border-bottom: 0.2em solid var(--main-secundairy);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background: #2c2c2c;
+}
+
+main div.container form.search-box button {
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+
+	transition: all 0.2s;
+
+	color: var(--main-bg-darker);
+	border: none;
+	border-radius: 8px;
+	background: var(--main-secundairy);
+}
+
+main div.container form.search-box button:hover {
+	cursor: pointer;
+	transform: scale(0.97);
+
+	outline: none;
+}
+
+main div.container form.search-box button:active {
+	cursor: pointer;
+	transform: scale(0.95);
+
+	outline: none;
+}
+
+main div.container form.search-box div.filter-title {
+	grid-area: title;
+}
+
+main div.container form.search-box div.filter-director {
+	grid-area: director;
+}
+
+main div.container form.search-box div.filter-genre {
+	grid-area: genre;
+}
+
+main div.container form.search-box div.filter-year {
+	grid-area: year;
+}
+
+main div.container form.search-box div.submit {
+	grid-area: submit;
+}
+
+main div.container form.search-box div.box input::placeholder {
+	color: #cccccc;
 }
 
 /* ------ GENRE CONTAINERS ------ */
@@ -216,6 +301,7 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 @media only screen and (min-width: 1250px) {
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background::after {
 		content: '';
+		/* only works on firefox... */
 		/* hacky way to force the padding on the right (from this site, altered to work: https://chenhuijing.com/blog/flexbox-and-padding/ -> Using the ::after pseudo-element) */
 		padding-right: 0.01px;
 	}
@@ -234,13 +320,16 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 		font-size: .75em;
 		font-weight: bold;
 		text-transform: uppercase;
-		clip-path: inset(100% 100% 0 100%);
-		transition: clip-path .3s ease;
+		/* clip-path: inset(100% 100% 0 100%); */
+		/* transition: clip-path .3s ease; */
+		opacity: 0;
+		transition: opacity .3s ease;
 		z-index: 1;
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film:hover div.hover {
-		clip-path: inset(100% 100% 100% 100%);
+		/* clip-path: inset(100% 100% 100% 100%); */
+		opacity: 1;
 	}
 
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background a.film:hover div.poster {

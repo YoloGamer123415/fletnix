@@ -80,12 +80,6 @@ main div.best-films div.container div.films {
 	width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-	main div.best-films div.container div.films {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
 @media only screen and (min-width: 1250px) {
 	main div.best-films div.container div.films {
 		grid-template-columns: repeat(3, 1fr);
@@ -94,13 +88,12 @@ main div.best-films div.container div.films {
 
 main div.best-films div.container div.films a.film {
 	position: relative;
-	background-color: red;
 	color: var(--main-fg);
 	border-radius: 1.5em;
 	overflow: hidden;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1250px) {
 	main div.best-films div.container div.films a.film {
 		height: 40em;
 	}
@@ -116,6 +109,7 @@ main div.best-films div.container div.films a.film div.poster {
 
 main div.best-films div.container div.films a.film div.poster img {
 	max-width: 100%;
+	border-radius: 1.5em;
 }
 
 main div.best-films div.container div.films a.film div.hover {
@@ -136,22 +130,20 @@ main div.best-films div.container div.films a.film div.hover {
 		background-color: rgba(0, 0, 0, .5);
 		font-weight: bold;
 		text-transform: uppercase;
-		clip-path: inset(100% 100% 0 100%);
-		transition: clip-path .3s ease;
+		/* clip-path: inset(100% 100% 0 100%); */
+		/* transition: clip-path .3s ease; */
+		opacity: 0;
+		transition: opacity .3s ease;
 		z-index: 1;
 	}
 
 	main div.best-films div.container div.films a.film:hover div.hover {
-		clip-path: inset(100% 100% 100% 100%);
+		/* clip-path: inset(100% 100% 100% 100%); */
+		opacity: 1;
 	}
 
 	main div.best-films div.container div.films a.film:hover div.poster {
-		transform: scale(1.1);
-	}
-
-	main div.best-films div.container div.films a.film div.hover div.title {
-		font-size: 2.5em;
-		text-align: center;
+		transform: scale(1.5);
 	}
 
 	main div.best-films div.container div.films a.film div.hover div.title-small {
