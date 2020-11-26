@@ -3,18 +3,68 @@ body, html {
 }
 
 /* ------ TOP TEXT ------ */
-main div.container div.title h1 {
+main div.container div.top {
+	display: grid;
+	grid-template-columns: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.container div.top {
+		grid-template-columns: 50% 50%;
+	}
+}
+
+main div.container div.top div.title h1 {
 	margin: 0;
 	font-size: 4em;
 }
 
-main div.container div.title h1 span.underline {
+main div.container div.top div.title h1 span.underline {
 	border-bottom: .05em solid var(--main-secundairy);
 }
 
-main div.container div.title p.small {
+main div.container div.top div.title p.small {
 	margin: 0;
 	font-size: 1.5em;
+}
+
+main div.container div.top div.search-button {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+main div.container div.top div.search-button label {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1em;
+	background-color: var(--main-secundairy);
+	color: var(--main-fg-secundairy);
+	border-radius: .3em;
+	text-align: center;
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.container div.top div.search-button label {
+		width: auto;
+		padding: 1em 4em;
+	}
+}
+
+/* ------ SEARCH BOX ------ */
+main div.container form.search-box {
+	max-height: 0;
+	background-color: red;
+	overflow: hidden;
+	transition:
+		max-height .3s ease,
+		padding .3s ease;
+}
+
+main div.container input[type="checkbox"]#search-box:checked + form.search-box {
+	max-height: 100vh;
+	padding: 2em 0 1em;
 }
 
 /* ------ GENRE CONTAINERS ------ */

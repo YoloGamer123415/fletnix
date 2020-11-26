@@ -44,13 +44,62 @@
 
 	<main>
 		<div class="container">
-			<div class="title">
-				<h1>
-					<span class="underline">Films</span>
-				</h1>
+			<div class="top">
+				<div class="title">
+					<h1>
+						<span class="underline">Films</span>
+					</h1>
 
-				<p class="small">Check al onze genres!</p>
+					<p class="small">Check al onze genres!</p>
+				</div>
+
+				<div class="search-button">
+					<label for="search-box">Voeg zoekopties toe</label>
+				</div>
 			</div>
+
+			<input id="search-box" type="checkbox" hidden>
+
+			<form action="./search.html" class="search-box">
+				<div class="filter-title">
+					<input type="text" name="title" placeholder="Film titel">
+				</div>
+
+				<div class="filter-director">
+					<input type="text" name="director" placeholder="Regisseur">
+				</div>
+
+				<div class="filter-genre">
+					<select name="genre">
+						<option value="not-chosen" selected disabled>Selecteer een genre</option>
+						<option value="action">Actie</option>
+						<option value="comedie">Comedie</option>
+						<option value="horror">Horror</option>
+						<option value="romance">Liefde</option>
+						<option value="oldskool">Old-skool</option>
+					</select>
+				</div>
+
+				<div class="filter-year">
+					<select name="year-keyword">
+						<option value="before">Voor</option>
+						<option value="in">In</option>
+						<option value="after">Na</option>
+					</select>
+
+					<!-- max=2020 obviously needs to be set with javascript to the current year, but we don't have that >:( -->
+					<input
+						type="number"
+						name="year"
+						placeholder="Publicatiejaar"
+						min="0" max="2020" step="1"
+					>
+				</div>
+
+				<div class="submit">
+					<button type="submit">Zoeken</button>
+				</div>
+			</form>
 
 			<div class="genres">
 				<div class="genre">
