@@ -314,6 +314,14 @@ main div.container {
 	}
 }
 
+video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 75vw;
+}
+
 /* ------ FOOTER ------ */
 footer {
 	display: -webkit-flex;
@@ -325,6 +333,7 @@ footer {
 	background-color: var(--main-secondary);
 	color: var(--main-fg-secondary);
 	text-align: center;
+	z-index: 100;
 }
 
 footer a {
