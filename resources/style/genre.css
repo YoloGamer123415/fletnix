@@ -56,11 +56,11 @@ main div.container div.top div.search-button label {
 main div.container form.search-box {
 	display: grid;
 	grid-template:
-		'title' 1fr
-		'director' 1fr
-		'genre' 1fr
-		'year' 1fr
-		'submit' 1fr
+		'title' auto
+		'director' auto
+		'genre' auto
+		'year' auto
+		'submit' auto
 		/ 100%;
 	/* gap: 1em; */
 	/* width: calc(100% - 1em); */
@@ -74,9 +74,9 @@ main div.container form.search-box {
 @media only screen and (min-width: 768px) {
 	main div.container form.search-box {
 		grid-template:
-			'title director' 1fr
-			'genre year' 1fr
-			'submit submit' 1fr
+			'title director' auto
+			'genre year' auto
+			'submit submit' auto
 			/ 50% 50%;
 	}
 }
@@ -87,9 +87,7 @@ main div.container input[type="checkbox"]#search-box:checked + form.search-box {
 }
 
 main div.container form.search-box input {
-	width: calc(100% - 30px);
-	margin-top: 15px;
-	margin-bottom: 15px;
+	width: calc(100% - 2 * 1em);
 	padding: 1em;
 
 	color: var(--main-fg);
@@ -100,11 +98,13 @@ main div.container form.search-box input {
 	background: #2c2c2c;
 }
 
+main div.container form.search-box input::placeholder {
+	color: #cccccc;
+}
+
 main div.container form.search-box button {
 	width: 100%;
 	height: 50px;
-	margin-top: 30px;
-	margin-bottom: 15px;
 
 	transition: all 0.2s;
 
@@ -128,6 +128,21 @@ main div.container form.search-box button:active {
 	outline: none;
 }
 
+main div.container form.search-box select {
+	width: 100%;
+	padding: 1em;
+	background-color: #2c2c2c;
+	color: var(--main-fg);
+	border: none;
+	border-bottom: .2em solid var(--main-secundairy);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+main div.container form.search-box > div {
+	padding: 1em;
+}
+
 main div.container form.search-box div.filter-title {
 	grid-area: title;
 }
@@ -142,14 +157,13 @@ main div.container form.search-box div.filter-genre {
 
 main div.container form.search-box div.filter-year {
 	grid-area: year;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	gap: 1em;
 }
 
 main div.container form.search-box div.submit {
 	grid-area: submit;
-}
-
-main div.container form.search-box div.box input::placeholder {
-	color: #cccccc;
 }
 
 /* ------ GENRE CONTAINERS ------ */
