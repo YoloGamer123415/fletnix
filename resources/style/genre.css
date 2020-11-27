@@ -316,7 +316,7 @@ main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.
 @media only screen and (min-width: 1250px) {
 	main div.container div.genres div.genre div.genre-bar-wrapper div.genre-bar div.bar-background::after {
 		content: '';
-		/* only works on firefox... */
+		/* only works on firefox... and chromium? */
 		/* hacky way to force the padding on the right (from this site, altered to work: https://chenhuijing.com/blog/flexbox-and-padding/ -> Using the ::after pseudo-element) */
 		padding-right: 0.01px;
 	}
