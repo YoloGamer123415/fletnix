@@ -6,6 +6,20 @@ main {
 	padding-top: 5vh;
 }
 
+div.container div.poster {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5vh;
+}
+
+div.container div.poster img {
+	z-index: 0;
+	max-height: 25vh;
+	border-radius: 16px;
+}
+
 div.container div.text {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.4);
@@ -27,20 +41,6 @@ div.container div.text h2 {
 div.container div.text h4 {
 	text-align: center;
 	margin-top: 0;
-}
-
-div.container div.poster {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 5vh;
-}
-
-div.container div.poster img {
-	z-index: 0;
-	max-height: 25vh;
-	border-radius: 16px;
 }
 
 main div.container a {
