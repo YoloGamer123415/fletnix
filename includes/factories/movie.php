@@ -1,8 +1,10 @@
 <?php
 function getMovieHtml($movie) {
 	$id = $movie["id"];
-	$title = substr($movie["title"], 0, 15) . "…";
-	$imageUrl = "/resources/images/posters/$id";
+	$title = $movie["title"];
+	if(strlen($title) > 15) $title = substr($title, 0, 15) . "…"; 
+
+	$imageUrl = "/resources/images/posters/$id.png";
 	$runtime = $movie["runtime"];
 
 	return <<<HTML
