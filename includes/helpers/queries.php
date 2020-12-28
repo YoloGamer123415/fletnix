@@ -1,30 +1,9 @@
 <?php
+require_once("database.php");
+
 function getMovies() {
-	//TODO: REAL DATA FROM DATABASE
-
-	$movies[] = array(
-		"id" => 1,
-		"title" => "Aquaman",
-		"runtime" => "1:03"
-	);
-
-	$movies[] = array(
-		"id" => 1,
-		"title" => "Aquaman",
-		"runtime" => "1:03"
-	);
-
-	$movies[] = array(
-		"id" => 1,
-		"title" => "Aquaman",
-		"runtime" => "1:03"
-	);
-
-	$movies[] = array(
-		"id" => 1,
-		"title" => "Aquaman",
-		"runtime" => "1:03"
-	);
+	global $connection;
+	$movies = $connection->query("SELECT * FROM `movies` LIMIT 6");
 
 	return $movies;
 }

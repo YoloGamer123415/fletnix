@@ -23,17 +23,8 @@ $username = trim( $fileLines[1] );
 $password = trim( $fileLines[2] );
 $database = trim( $fileLines[3] );
 
-echo <<<EOF
-host: "$host"<br>
-username: "$username"<br>
-password: "$password"<br>
-database: "$database"<br>
-EOF;
-
 $connection = new mysqli($host, $username, $password, $database);
 
 if ($connection->connect_error) {
 	die("Connection to database failed: " . $connection->connect_error);
-} else {
-	echo "Connected to database!";
 }
