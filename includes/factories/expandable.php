@@ -14,7 +14,7 @@ function getExpandableHtml($genre, $movies) {
 	$movieHtmlArr = [];
 
 	foreach($movies as $movie) {
-		$movieHtml[] = getMovieHtml($movie);
+		$movieHtmlArr[] = getMovieHtml($movie);
 	}
 
 	$movieHtml = implode($movieHtmlArr);

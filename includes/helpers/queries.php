@@ -21,7 +21,7 @@ function getAllMovies() {
 
 	// $rows = [];
 	// $stmt = $connection->prepare("SELECT * FROM `movies`;");
-	// $stmt->bind_param("s", $genre);
+	// $stmt->bind_param("s", $genreId);
 	// $stmt->execute();
 	// $result = $stmt->get_result();
 	// $stmt->close();
@@ -35,30 +35,34 @@ function getAllMovies() {
 	return dbQuery("SELECT * FROM `movies`;");
 }
 
-function getMoviesByGenre($genre) {
-	if (!$genre) {
-		throw new Exception("No genre given");
+function getMovieById($movieId) {
+	if(!$movieId) throw new Exception("No movieId given!");
+
+	return dbQuery(
+		"SELECT * FROM `movies` WHERE `id` = :movieId;",
+		array(
+			":movieId" => $movieId
+		)
+	)[0];
+}
+
+function getMoviesByGenre($genreId) {
+	if (!$genreId) {
+		throw new Exception("No genreId given");
 	}
 
-	// global $connection;
-
-	// $rows = [];
-	// $stmt = $connection->prepare("SELECT * FROM `movies` WHERE `genre` = ?;");
-	// $stmt->bind_param("s", $genre);
-	// $stmt->execute();
-	// $result = $stmt->get_result();
-	// $stmt->close();
-
-	// while( $row = $result->fetch_assoc() ) {
-		// $rows[] = $row;
-	// }
-
-	// return $rows;
-	
 	return dbQuery(
-		"SELECT * FROM `movies` WHERE `genre` = :genre;",
+		"SELECT * FROM `movies` WHERE `genre_id` = :genreId;",
 		array(
-			":genre" => $genre
+			":genreId" => $genreId
 		)
 	);
 }
+
+// function searchForMovies($title, $director, $genre, $yearKeyword, $year) {
+// 	$filters = [];
+
+// 	if ( isset($title) ) {
+// 		$filters[] = ""
+// 	}
+// }

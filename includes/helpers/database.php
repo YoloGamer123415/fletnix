@@ -30,12 +30,16 @@ try {
 	die("Connection failed: " . $e->getMessage());
 }
 
-function _filter($key) {
-	return gettype($key) == "string";
-}
+function parseResult(array $results) {
+	$final = [];
 
-function parseResult(array $result) {
-	return array_filter($result, '_filter', ARRAY_FILTER_USE_KEY);
+	foreach ($results as $key => $result) {
+		$final[$key] = array_filter($result, function($key) {
+			return gettype($key) == "string";
+		}, ARRAY_FILTER_USE_KEY);
+	}
+
+	return $final;
 }
 
 // EXAMPLE: dbQuery("{query}", ["{var}" => "{value}"])
@@ -48,8 +52,6 @@ function dbQuery(string $query, array $vars = []) {
 	}
 	$stmt->execute();
 	$result = $stmt->fetchAll();
-
-	var_dump($result, parseResult($result));
 
 	return parseResult($result);
 }

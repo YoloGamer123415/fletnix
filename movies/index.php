@@ -11,9 +11,11 @@ function getOptions($genres) {
 	<option value="not-chosen" selected disabled>Selecteer een genre</option>
 	HTML;
 
-	foreach ($genres as $genre => $genreText) {
+	foreach ($genres as $genre) {
+		$genreId = $genre["id"];
+		$genreText = $genre["nederlands"];
 		$html .= <<<HTML
-		<option value="{$genre}">{$genreText}</option>
+		<option value="{$genreId}">{$genreText}</option>
 		HTML;
 	}
 
@@ -28,14 +30,15 @@ function getOptions($genres) {
 	// "romance" => "Romantiek",
 	// "oldskool" => "Old-Skool",
 // );
-$genres = dbQuery("SELECT * FROM `genres`;");
+$genres = dbQuery("SELECT id, nederlands FROM `genres`;");
 $expandablesHtml = [];
 
-var_dump($genres);
+foreach ($genres as $genre) {
+	$genreId = $genre["id"];
+	$genreText = $genre["nederlands"];
 
-foreach ($genres as $genre => $genreText) {
-	$movies = getMoviesByGenre($genre);
-	$html = getExpandableHtml( array($genre, $genreText), $movies );
+	$movies = getMoviesByGenre($genreId);
+	$html = getExpandableHtml( array($genreId, $genreText), $movies );
 
 	$expandablesHtml[] = $html;
 }
@@ -118,7 +121,7 @@ foreach ($genres as $genre => $genreText) {
 	</main>
 
 	<?php
-		include("../includes/header.php");
+		include("../includes/footer.php");
 	?>
 </body>
 </html>
