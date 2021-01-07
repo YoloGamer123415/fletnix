@@ -14,13 +14,13 @@
 		<div class="right">
 			<ul>
 				<li>
-					<a href="/genre/index.php">Films</a>
+					<a href="/movies/index.php">Films</a>
 					<ul>
-						<li><a href="/genre/index.php#action">Actie</a></li>
-						<li><a href="/genre/index.php#comedy">Comedie</a></li>
-						<li><a href="/genre/index.php#horror">Horror</a></li>
-						<li><a href="/genre/index.php#romance">Romantiek</a></li>
-						<li><a href="/genre/index.php#oldskool">Old-Skool</a></li>
+						<li><a href="/movies/index.php#action">Actie</a></li>
+						<li><a href="/movies/index.php#comedy">Comedie</a></li>
+						<li><a href="/movies/index.php#horror">Horror</a></li>
+						<li><a href="/movies/index.php#romance">Romantiek</a></li>
+						<li><a href="/movies/index.php#oldskool">Old-Skool</a></li>
 					</ul>
 				</li>
 				<li><a href="/inloggen.php">Inloggen</a></li>

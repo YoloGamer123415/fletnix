@@ -23,8 +23,33 @@ $username = trim( $fileLines[1] );
 $password = trim( $fileLines[2] );
 $database = trim( $fileLines[3] );
 
-$connection = new mysqli($host, $username, $password, $database);
+try {
+	$connection = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+	die("Connection failed: " . $e->getMessage());
+}
 
-if ($connection->connect_error) {
-	die("Connection to database failed: " . $connection->connect_error);
+function _filter($key) {
+	return gettype($key) == "string";
+}
+
+function parseResult(array $result) {
+	return array_filter($result, '_filter', ARRAY_FILTER_USE_KEY);
+}
+
+// EXAMPLE: dbQuery("{query}", ["{var}" => "{value}"])
+function dbQuery(string $query, array $vars = []) {
+	global $connection;
+
+	$stmt = $connection->prepare($query);
+	foreach ($vars as $type => $var) {
+		$stmt->bindParam($type, $var);
+	}
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+
+	var_dump($result, parseResult($result));
+
+	return parseResult($result);
 }
