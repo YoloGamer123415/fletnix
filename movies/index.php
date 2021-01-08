@@ -22,14 +22,6 @@ function getOptions($genres) {
 	return $html;
 }
 
-// TODO: maybe create a genre table in the database
-// $genres = array(
-	// "action" => "Actie",
-	// "comedy" => "Comedie",
-	// "horror" => "Horror",
-	// "romance" => "Romantiek",
-	// "oldskool" => "Old-Skool",
-// );
 $genres = dbQuery("SELECT id, nederlands FROM `genres`;");
 $expandablesHtml = [];
 
@@ -76,7 +68,17 @@ foreach ($genres as $genre) {
 				</div>
 			</div>
 
-			<input id="search-box" type="checkbox" hidden>
+			<?php
+				if ( isset( $_GET["search"] ) ) {
+					echo <<<HTML
+					<input id="search-box" type="checkbox" hidden checked>
+					HTML;
+				} else {
+					echo <<<HTML
+					<input id="search-box" type="checkbox" hidden>
+					HTML;
+				}
+			?>
 
 			<!-- TODO: Doen we dit in een apart bestand of gewoon hier? -->
 			<form action="/search/" class="search-box">

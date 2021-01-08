@@ -47,11 +47,37 @@ function dbQuery(string $query, array $vars = []) {
 	global $connection;
 
 	$stmt = $connection->prepare($query);
-	foreach ($vars as $type => $var) {
-		$stmt->bindParam($type, $var);
+	foreach ($vars as $var => $value) {
+		$type = NULL;
+
+		switch ( gettype($value) ) {
+			case 'NULL': {
+				$type = PDO::PARAM_NULL;
+				break;
+			}
+			case 'boolean': {
+				$type = PDO::PARAM_BOOL;
+				break;
+			}
+			case 'integer': {
+				$type = PDO::PARAM_INT;
+				break;
+			}
+			case 'string':
+			default: {
+				$type = PDO::PARAM_STR;
+				break;
+			}
+		}
+
+		echo $var . " -> " . $value . " (" . gettype($value) . ", " . $type . ")" . "<br>";
+
+		$stmt->bindParam($var, $value, $type);
 	}
 	$stmt->execute();
 	$result = $stmt->fetchAll();
+
+	$stmt->debugDumpParams();
 
 	return parseResult($result);
 }

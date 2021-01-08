@@ -7,3 +7,123 @@ main div.container {
 	text-align: center;
 	font-size: 2em;
 }
+
+main div.container div.movies {
+	--gap: 1em;
+	--amount: 1;
+
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(
+		var(--amount),
+		calc( ( 100% - (var(--amount) - 1) * var(--gap) ) / var(--amount) )
+	);
+	gap: var(--gap);
+	justify-items: center;
+	width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+	main div.container div.movies {
+		--amount: 2;
+	}
+}
+
+@media only screen and (min-width: 1250px) {
+	main div.container div.movies {
+		--amount: 5;
+	}
+}
+
+main div.container div.movies a.film {
+	display: block;
+	flex: 0 0 auto;
+	position: relative;
+	height: 100%;
+	color: var(--main-fg);
+	border-radius: .3em;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+main div.container div.movies a.film div.poster {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	transform: scale(1);
+	transition: transform .3s ease;
+}
+
+main div.container div.movies a.film div.poster img {
+	max-width: 100%;
+}
+
+/* TODO: Maybe show the title above the poster */
+main div.container div.movies a.film div.hover {
+	display: none;
+}
+
+@media only screen and (min-width: 1250px) {
+	main div.container div.movies a.film div.hover {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 1em;
+		background-color: rgba(0, 0, 0, .5);
+		font-size: .75em;
+		font-weight: bold;
+		text-transform: uppercase;
+		/* clip-path: inset(100% 100% 0 100%); */
+		/* transition: clip-path .3s ease; */
+		opacity: 0;
+		transition: opacity .3s ease;
+		z-index: 1;
+	}
+
+	main div.container div.movies a.film:hover div.hover {
+		/* clip-path: inset(100% 100% 100% 100%); */
+		opacity: 1;
+	}
+
+	main div.container div.movies a.film:hover div.poster {
+		transform: scale(1.1);
+	}
+
+	main div.container div.movies a.film div.hover div.title {
+		font-size: 1.25em;
+		text-align: center;
+	}
+
+	main div.container div.movies a.film div.hover div.title-small {
+		text-align: center;
+	}
+
+	main div.container div.movies a.film div.hover div.play-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 2em;
+		height: 2em;
+		transform: translateX(-50%) translateY(-50%);
+		color: var(--main-fg);
+		transition: color .3s ease;
+	}
+
+	main div.container div.movies a.film div.hover div.play-btn:hover {
+		color: var(--main-secondary);
+	}
+
+	main div.container div.movies a.film div.hover div.play-btn svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	main div.container div.movies a.film div.hover div.playtime {
+		margin-top: auto; /* aligns item on the bottom */
+	}
+}

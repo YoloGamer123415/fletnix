@@ -4,17 +4,24 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require("../includes/helpers/queries.php");
+require("../includes/factories/movie.php");
 
+echo "<br><br><br><br><br><br>";
+
+$moviesHtmlArr = [];
 $movies = searchForMovies(
 	$_GET["title"],
 	$_GET["director"],
-	$_GET["genre"],
+	isset( $_GET["genre"] ) ? $_GET["genre"] : NULL,
 	$_GET["year-keyword"],
 	$_GET["year"],
 );
 
-echo '<br><br><br><br><br><br><br>';
+echo "<br>";
 var_dump($movies);
+
+foreach($movies as $movie)
+	$moviesHtmlArr[] = getMovieHtml($movie);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -35,7 +42,21 @@ var_dump($movies);
 
 	<main>
 		<div class="container">
+			<?php
+				if ( count($moviesHtmlArr) > 0 ) {
+					$length = count($movies);
 
+					echo "<h1>{$length} zoekresultaten</h1>";
+					echo "<div class=\"movies\">" . implode($moviesHtmlArr) . "</div>";
+				} else {
+					echo <<<HTML
+					<div class="no-results">
+						<h1>Geen resultaten gevonden</h1>
+						<p><a href="/movies/?search">Ga terug</a> en probeer het opnieuw.</p>
+					</div>
+					HTML;
+				}
+			?>
 		</div>
 	</main>
 

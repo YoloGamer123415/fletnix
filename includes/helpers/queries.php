@@ -59,10 +59,36 @@ function getMoviesByGenre($genreId) {
 	);
 }
 
-// function searchForMovies($title, $director, $genre, $yearKeyword, $year) {
-// 	$filters = [];
+function searchForMovies($title, $director, $genre, $yearKeyword, $year) {
+	$filters = [];
+	$variables = [];
 
-// 	if ( isset($title) ) {
-// 		$filters[] = ""
-// 	}
-// }
+	if ( isset($title) && !empty($title) ) {
+		// add % in front of and behind the title, because `LIKE %:title%` becomes `LIKE '%'{title}'%'`, which doesn't work
+		$filters[] = "title LIKE CONCAT('%', :title, '%')";
+		$variables[":title"] = $title;
+	}
+	if ( isset($director) && !empty($director) ) {
+		$filters[] = "director LIKE CONCAT('%', :director, '%')";
+		$variables[":director"] = $director;
+	}
+	if ( isset($genre) && !empty($genre) ) {
+		$filters[] = "genre_id = :genre";
+		$variables[":genre"] = $genre;
+	}
+	if ( isset($year) && !empty($year) ) {
+		// TODO: what if they change it to something not in this array?
+		$char = array(
+			"before" => "<",
+			"in" => "=",
+			"after" => ">",
+		)[$yearKeyword];
+		$filters[] = "YEAR(publication_date) $char :year";
+		$variables[":year"] = intval($year);
+	}
+
+	return dbQuery(
+		"SELECT * FROM `movies` WHERE " . implode(" AND ", $filters) . ";",
+		$variables
+	);
+}

@@ -3,10 +3,10 @@ function getMovieHtml($movie) {
 	$id = $movie["id"];
 	$title = $movie["title"];
 	if(strlen($title) > 15) $title = substr($title, 0, 15) . "…";
-	
+
 	$imageUrl = "/resources/images/posters/$id.png";
 	$runtime = $movie["runtime"];
-	
+
 	return <<<HTML
 	<a href="/movie?id={$id}" class="film">
 		<div class="poster">
