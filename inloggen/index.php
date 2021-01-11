@@ -1,3 +1,31 @@
+<?php
+	session_start();
+
+	require("../includes/helpers/queries.php");
+
+	$userVerification = isset($_POST["email"]) && isset($_POST["password"]);
+	$usernameIncorrect = false;
+	$passwordIncorrect = false;
+
+	if($userVerification) {
+		$email = $_POST["email"];
+		$password = $_POST["password"];
+
+		$user = getUser($email)[0];
+		$usernameIncorrect = count($user) == 0;
+
+		echo $password . '<br>';
+		echo $user["password"] . '<br>';
+		password_verify($password, $user["password"]);
+
+		if(!$usernameIncorrect && password_verify($password, $user["password"])) {
+			$_SESSION["user"] = $user;
+			header("Location: /");
+		} else {
+			$passwordIncorrect = true;
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -14,32 +42,6 @@
 </head>
 <body>
 	<!-- <?php require("../includes/header.php") ?> -->
-	<?php
-		session_start();
-
-		require("../includes/helpers/queries.php");
-
-		$userVerification = isset($_POST["email"]) && isset($_POST["password"]);
-		$usernameIncorrect = false;
-		$passwordIncorrect = false;
-
-		if($userVerification) {
-			$email = $_POST["email"];
-			$password = $_POST["password"];
-
-			$user = getUser($email);
-			$usernameIncorrect = count($user) == 0;
-
-			$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-			if(!$usernameIncorrect && password_verify($user["password"], $hashedPassword)) { 
-				$_SESSION["user"] = $user;
-				header("Location: /");
-			} else {
-				$passwordIncorrect = true;
-			}
-		}
-	?>
 
 	<main>
 		<div class="container">
@@ -54,8 +56,8 @@
 						<input type="email" name="email" id="email" placeholder="E-mail adres">
 						<input type="password" name="password" id="password" placeholder="Wachtwoord">
 
-						<?= $usernameIncorrect ? "" : "Gebruikersnaam incorrect" ?>
-						<?= $passwordIncorrect ? "" : "Wachtwoord incorrect" ?>
+						<?= $usernameIncorrect ? "Gebruikersnaam incorrect" : "" ?>
+						<?= $passwordIncorrect ? "Wachtwoord incorrect" : "" ?>
 
 						<button type="submit">log in</button>
 					</form>

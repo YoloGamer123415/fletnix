@@ -12,6 +12,8 @@ if ( isset( $_SESSION["user"] ) ) {
 	<a href="/logout.php"><b>{$username}</b></a>
 	HTML;
 }
+
+var_dump($html);
 ?>
 <header>
 	<nav>
@@ -35,10 +37,10 @@ if ( isset( $_SESSION["user"] ) ) {
 						<li><a href="/movies/#comedy">Comedie</a></li>
 						<li><a href="/movies/#horror">Horror</a></li>
 						<li><a href="/movies/#romance">Romantiek</a></li>
-						<li><?= $html ?></li>
+						<li><a href="/movies/#oldskool">Old-Skool</a></li>
 					</ul>
 				</li>
-				<li><a href="/inloggen">Inloggen</a></li>
+				<li><?= $html ?></li>
 			</ul>
 		</div>
 	</nav>
