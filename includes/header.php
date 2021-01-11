@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+$html = <<<HTML
+<a href="/movies/#oldskool">Old-Skool</a>
+HTML;
+
+if ( isset( $_SESSION["user"] ) ) {
+	$username = $_SESSION["user"]["first_name"] . ' ' . $_SESSION["user"]["last_name"];
+
+	$html = <<<HTML
+	<a href="/logout.php"><b>{$username}</b></a>
+	HTML;
+}
+?>
 <header>
 	<nav>
 		<div class="left">
@@ -20,7 +35,7 @@
 						<li><a href="/movies/#comedy">Comedie</a></li>
 						<li><a href="/movies/#horror">Horror</a></li>
 						<li><a href="/movies/#romance">Romantiek</a></li>
-						<li><a href="/movies/#oldskool">Old-Skool</a></li>
+						<li><?= $html ?></li>
 					</ul>
 				</li>
 				<li><a href="/inloggen.php">Inloggen</a></li>
