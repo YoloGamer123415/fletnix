@@ -72,7 +72,7 @@ function dbQuery(string $query, array $vars = []) {
 
 		echo $var . " -> " . $value . " (" . gettype($value) . ", " . $type . ")" . "<br>";
 
-		$stmt->bindParam($var, $value, $type);
+		$stmt->bindValue($var, $value, $type);
 	}
 	$stmt->execute();
 	$result = $stmt->fetchAll();
