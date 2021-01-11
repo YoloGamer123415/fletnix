@@ -92,3 +92,12 @@ function searchForMovies($title, $director, $genre, $yearKeyword, $year) {
 		$variables
 	);
 }
+
+function getUser($email) {
+	return dbQuery(
+		"SELECT * FROM `users` WHERE `email` = :email",
+		array(
+			":email" => $email,
+		)
+	);
+}
