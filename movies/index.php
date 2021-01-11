@@ -22,7 +22,7 @@ function getOptions($genres) {
 	return $html;
 }
 
-$genres = dbQuery("SELECT id, nederlands FROM `genres`;");
+$genres = getAllGenres();
 $expandablesHtml = [];
 
 foreach ($genres as $genre) {

@@ -1,3 +1,13 @@
+<?php
+	require_once("./includes/helpers/queries.php");
+	require("./includes/factories/movie.php");
+
+	$moviesHtml = [];
+	$movies = getMovies();
+	foreach($movies as $movie) {
+		$moviesHtml[] = getMovieHtml($movie);
+	}
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -35,17 +45,9 @@
 		<div class="best-films">
 			<div class="container">
 				<h1>Het beste van Fletnix</h1>
-	
-				<div class="films">
-					<?php
-						require("./includes/helpers/queries.php");
-						require("./includes/factories/movie.php");
 
-						$movies = getMovies();
-						foreach($movies as $movie) {
-							echo getMovieHtml($movie);
-						}
-					?>
+				<div class="films">
+					<?= implode($moviesHtml) ?>
 				</div>
 			</div>
 		</div>
