@@ -6,8 +6,6 @@ error_reporting(E_ALL);
 require("../includes/helpers/queries.php");
 require("../includes/factories/movie.php");
 
-echo "<br><br><br><br><br><br>";
-
 $moviesHtmlArr = [];
 $movies = searchForMovies(
 	$_GET["title"],
@@ -16,9 +14,6 @@ $movies = searchForMovies(
 	$_GET["year-keyword"],
 	$_GET["year"],
 );
-
-echo "<br>";
-var_dump($movies);
 
 foreach($movies as $movie)
 	$moviesHtmlArr[] = getMovieHtml($movie);

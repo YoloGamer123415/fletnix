@@ -70,14 +70,10 @@ function dbQuery(string $query, array $vars = []) {
 			}
 		}
 
-		echo $var . " -> " . $value . " (" . gettype($value) . ", " . $type . ")" . "<br>";
-
 		$stmt->bindValue($var, $value, $type);
 	}
 	$stmt->execute();
 	$result = $stmt->fetchAll();
-
-	$stmt->debugDumpParams();
 
 	return parseResult($result);
 }
