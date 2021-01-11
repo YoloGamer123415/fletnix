@@ -2,7 +2,7 @@
 session_start();
 
 $html = <<<HTML
-<a href="/movies/#oldskool">Old-Skool</a>
+<a href="/inloggen/">Inloggen</a>
 HTML;
 
 if ( isset( $_SESSION["user"] ) ) {
@@ -12,8 +12,6 @@ if ( isset( $_SESSION["user"] ) ) {
 	<a href="/logout.php"><b>{$username}</b></a>
 	HTML;
 }
-
-var_dump($html);
 ?>
 <header>
 	<nav>
