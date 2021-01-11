@@ -38,7 +38,7 @@ if ( isset( $_SESSION["user"] ) ) {
 						<li><?= $html ?></li>
 					</ul>
 				</li>
-				<li><a href="/inloggen.php">Inloggen</a></li>
+				<li><a href="/inloggen">Inloggen</a></li>
 			</ul>
 		</div>
 	</nav>
