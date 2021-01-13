@@ -1,6 +1,16 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once("../includes/helpers/queries.php");
 require("../includes/factories/movie.php");
+
+if (
+	!(isset($_GET["title"]) || isset($_GET["director"]) || isset($_GET["genre"]) || isset($_GET["year-keyword"]) || isset($_GET["year"]))
+) {
+	header("Location: /movies/?search");
+}
 
 $moviesHtmlArr = [];
 $movies = searchForMovies(

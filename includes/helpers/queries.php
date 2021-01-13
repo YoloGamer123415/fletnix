@@ -55,6 +55,10 @@ function searchForMovies($title, $director, $genre, $yearKeyword, $year) {
 			"in" => "=",
 			"after" => ">",
 		)[$yearKeyword];
+
+		if (!$char)
+			$char = "<";
+
 		$filters[] = "YEAR(publication_date) $char :year";
 		$variables[":year"] = intval($year);
 	}
