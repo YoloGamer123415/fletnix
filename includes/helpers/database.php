@@ -74,7 +74,7 @@ function dbQuery(string $query, array $vars = [], bool $isInsert = false) {
 	}
 	$stmt->execute();
 
-	if ($isInsert) {
+	if ($isInsert)
 		return [];
 
 	$result = $stmt->fetchAll();
