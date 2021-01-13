@@ -79,7 +79,7 @@
 			<div class="register">
 				<div class="title">
 					<h1><span class="underline">Registreren</span></h1>
-					<p>Of <a href="/inloggen">login</a> als je al een account hebt</p>
+					<p>Of <a href="/login">login</a> als je al een account hebt</p>
 				</div>
 
 				<div class="box">

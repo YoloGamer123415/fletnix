@@ -16,7 +16,7 @@ foreach($genres as $genre) {
 }
 
 $signinHtml = <<<HTML
-<a href="/inloggen/">Inloggen</a>
+<a href="/login/">Inloggen</a>
 HTML;
 
 if ( isset( $_SESSION["user"] ) ) {

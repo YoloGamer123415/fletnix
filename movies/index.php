@@ -1,35 +1,36 @@
 <?php
-require_once("../includes/helpers/queries.php");
-require("../includes/factories/expandable.php");
+	require_once("../includes/auth-protected.php");
+	require_once("../includes/helpers/queries.php");
+	require("../includes/factories/expandable.php");
 
-function getOptions($genres) {
-	$html = <<<HTML
-	<option value="not-chosen" selected disabled>Selecteer een genre</option>
-	HTML;
+	function getOptions($genres) {
+		$html = <<<HTML
+		<option value="not-chosen" selected disabled>Selecteer een genre</option>
+		HTML;
+
+		foreach ($genres as $genre) {
+			$genreId = $genre["id"];
+			$genreText = $genre["nederlands"];
+			$html .= <<<HTML
+			<option value="{$genreId}">{$genreText}</option>
+			HTML;
+		}
+
+		return $html;
+	}
+
+	$genres = getAllGenres();
+	$expandablesHtml = [];
 
 	foreach ($genres as $genre) {
 		$genreId = $genre["id"];
 		$genreText = $genre["nederlands"];
-		$html .= <<<HTML
-		<option value="{$genreId}">{$genreText}</option>
-		HTML;
+
+		$movies = getMoviesByGenre($genreId);
+		$html = getExpandableHtml( array($genreId, $genreText), $movies );
+
+		$expandablesHtml[] = $html;
 	}
-
-	return $html;
-}
-
-$genres = getAllGenres();
-$expandablesHtml = [];
-
-foreach ($genres as $genre) {
-	$genreId = $genre["id"];
-	$genreText = $genre["nederlands"];
-
-	$movies = getMoviesByGenre($genreId);
-	$html = getExpandableHtml( array($genreId, $genreText), $movies );
-
-	$expandablesHtml[] = $html;
-}
 ?>
 <!DOCTYPE html>
 <html lang="nl">

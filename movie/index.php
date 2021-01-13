@@ -1,4 +1,5 @@
 <?php
+	require_once("../includes/auth-protected.php");
 	require_once("../includes/helpers/queries.php");
 
 	$notFound = false;

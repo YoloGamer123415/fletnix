@@ -33,7 +33,7 @@
 	<link rel="stylesheet" href="/resources/style/normalize.css" />
 	<link rel="stylesheet" href="/resources/style/variables.css" />
 	<link rel="stylesheet" href="/resources/style/main.css" />
-	<link rel="stylesheet" href="/resources/style/inloggen.css" />
+	<link rel="stylesheet" href="/resources/style/login.css" />
 	<link rel="stylesheet" href="/resources/style/fonts.css" />
 	<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/resources/images/favicon.ico" type="image/x-icon">
