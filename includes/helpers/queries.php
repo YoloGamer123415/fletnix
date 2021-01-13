@@ -2,7 +2,7 @@
 require_once("database.php");
 
 function getMovies() {
-	return dbQuery("SELECT * FROM `movies` LIMIT 6;");
+	return dbQuery("SELECT * FROM `movies` LIMIT 9;");
 }
 
 function getAllMovies() {
@@ -10,10 +10,8 @@ function getAllMovies() {
 }
 
 function getMovieById($movieId) {
-	if(!$movieId) throw new Exception("No movieId given!");
-
 	return dbQuery(
-		"SELECT * FROM `movies` WHERE `id` = :movieId;",
+		"SELECT * FROM `movies` WHERE id = :movieId;",
 		array(
 			":movieId" => $movieId
 		)
@@ -21,12 +19,8 @@ function getMovieById($movieId) {
 }
 
 function getMoviesByGenre($genreId) {
-	if (!$genreId) {
-		throw new Exception("No genreId given");
-	}
-
 	return dbQuery(
-		"SELECT * FROM `movies` WHERE `genre_id` = :genreId;",
+		"SELECT * FROM `movies` WHERE genre_id = :genreId;",
 		array(
 			":genreId" => $genreId
 		)
@@ -82,7 +76,7 @@ function getUser($email) {
 
 function addUser($firstName, $lastName, $email, $password) {
 	dbQuery(
-		"INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`) VALUES (':firstName', ':lastName', ':email', ':password')",
+		"INSERT INTO `users` (first_name, last_name, email, password) VALUES (:firstName, :lastName, :email, :password)",
 		array(
 			":firstName" => $firstName,
 			":lastName" => $lastName,

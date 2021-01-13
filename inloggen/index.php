@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require("../includes/helpers/queries.php");
+	require_once("../includes/helpers/queries.php");
 
 	$userVerification = isset($_POST["email"]) && isset($_POST["password"]);
 	$error = null;

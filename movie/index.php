@@ -1,19 +1,37 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+	
+	require_once("../includes/helpers/queries.php");
 
-require("../includes/helpers/queries.php");
-
-$movie = getMovieById($_GET["id"]);
-$id = $movie["id"];
-$title = $movie["title"];
-$publication_date = $movie["publication_date"];
-$runtime = $movie["runtime"];
-$cast = $movie["cast"];
-$story = $movie["story"];
-$facts = $movie["facts"];
-$imageUrl = "/resources/images/posters/" . $id . ".png";
+	if(isset($_GET["id"])) {
+		$movie = getMovieById($_GET["id"]);
+		if($movie) {
+			$id = $movie["id"];
+			$title = $movie["title"];
+			$publication_date = $movie["publication_date"];
+			$runtime = $movie["runtime"];
+			$cast = $movie["cast"];
+			$story = $movie["story"];
+			$facts = $movie["facts"];
+			$imageUrl = "/resources/images/posters/" . $id . ".png";
+		} else {
+			$title = "Film niet gevonden";
+			$publication_date = "niet gevonden";
+			$runtime = "niet gevonden";
+			$cast = "niet gevonden";
+			$story = "niet gevonden";
+			$facts = "niet gevonden";
+		}
+	} else {
+		$title = "Film niet gevonden";
+		$publication_date = "niet gevonden";
+		$runtime = "niet gevonden";
+		$cast = "niet gevonden";
+		$story = "niet gevonden";
+		$facts = "niet gevonden";
+	}
 ?>
 
 <!DOCTYPE html>

@@ -1,11 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 	session_start();
 
-	require("../includes/helpers/queries.php");
+	require_once("../includes/helpers/queries.php");
 
 	$userVerification = isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["password"]);
 	$error = NULL;

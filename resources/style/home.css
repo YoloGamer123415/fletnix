@@ -75,7 +75,7 @@ main div.best-films {
 
 main div.best-films div.container div.films {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 2em;
 	width: 100%;
 }
