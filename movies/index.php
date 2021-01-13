@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require("../includes/helpers/queries.php");
+require_once("../includes/helpers/queries.php");
 require("../includes/factories/expandable.php");
 
 function getOptions($genres) {
