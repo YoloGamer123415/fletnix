@@ -2,36 +2,10 @@
 require_once("database.php");
 
 function getMovies() {
-	// global $connection;
-
-	// $rows = [];
-	// $result = $connection->query("SELECT * FROM `movies` LIMIT 6");
-
-	// while( $row = $result->fetch_assoc() ) {
-		// $rows[] = $row;
-	// }
-
-	// return $rows;
-	
 	return dbQuery("SELECT * FROM `movies` LIMIT 6;");
 }
 
 function getAllMovies() {
-	// global $connection;
-
-	// $rows = [];
-	// $stmt = $connection->prepare("SELECT * FROM `movies`;");
-	// $stmt->bind_param("s", $genreId);
-	// $stmt->execute();
-	// $result = $stmt->get_result();
-	// $stmt->close();
-
-	// while( $row = $result->fetch_assoc() ) {
-		// $rows[] = $row;
-	// }
-
-	// return $rows;
-
 	return dbQuery("SELECT * FROM `movies`;");
 }
 
@@ -57,6 +31,10 @@ function getMoviesByGenre($genreId) {
 			":genreId" => $genreId
 		)
 	);
+}
+
+function getAllGenres() {
+	return dbQuery("SELECT id, nederlands FROM `genres`;");
 }
 
 function searchForMovies($title, $director, $genre, $yearKeyword, $year) {

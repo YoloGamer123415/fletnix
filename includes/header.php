@@ -1,14 +1,28 @@
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/helpers/queries.php");
+
 session_start();
 
-$html = <<<HTML
+$genres = getAllGenres();
+$genresHtml = [];
+
+foreach($genres as $genre) {
+	$id = $genre["id"];
+	$text = $genre["nederlands"];
+
+	$genresHtml[] = <<<HTML
+	<li><a href="/movies/#{$id}">{$text}</a></li>
+	HTML;
+}
+
+$signinHtml = <<<HTML
 <a href="/inloggen/">Inloggen</a>
 HTML;
 
 if ( isset( $_SESSION["user"] ) ) {
-	$username = $_SESSION["user"]["first_name"] . ' ' . $_SESSION["user"]["last_name"];
+	$username = htmlspecialchars($_SESSION["user"]["first_name"] . ' ' . $_SESSION["user"]["last_name"], ENT_QUOTES);
 
-	$html = <<<HTML
+	$signinHtml = <<<HTML
 	<a href="/logout.php"><b>{$username}</b></a>
 	HTML;
 }
@@ -31,14 +45,10 @@ if ( isset( $_SESSION["user"] ) ) {
 				<li>
 					<a href="/movies/">Films</a>
 					<ul>
-						<li><a href="/movies/#action">Actie</a></li>
-						<li><a href="/movies/#comedy">Comedie</a></li>
-						<li><a href="/movies/#horror">Horror</a></li>
-						<li><a href="/movies/#romance">Romantiek</a></li>
-						<li><a href="/movies/#oldskool">Old-Skool</a></li>
+						<?= implode($genresHtml) ?>
 					</ul>
 				</li>
-				<li><?= $html ?></li>
+				<li><?= $signinHtml ?></li>
 			</ul>
 		</div>
 	</nav>

@@ -43,7 +43,7 @@ function parseResult(array $results) {
 }
 
 // EXAMPLE: dbQuery("{query}", ["{var}" => "{value}"])
-function dbQuery(string $query, array $vars = []) {
+function dbQuery(string $query, array $vars = [], bool $isInsert = false) {
 	global $connection;
 
 	$stmt = $connection->prepare($query);
@@ -73,6 +73,10 @@ function dbQuery(string $query, array $vars = []) {
 		$stmt->bindValue($var, $value, $type);
 	}
 	$stmt->execute();
+
+	if ($isInsert)
+		return [];
+
 	$result = $stmt->fetchAll();
 
 	return parseResult($result);
