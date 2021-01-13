@@ -4,25 +4,24 @@
 	require("../includes/helpers/queries.php");
 
 	$userVerification = isset($_POST["email"]) && isset($_POST["password"]);
-	$usernameIncorrect = false;
-	$passwordIncorrect = false;
+	$error = null;
 
 	if($userVerification) {
 		$email = $_POST["email"];
 		$password = $_POST["password"];
 
 		$user = getUser($email)[0];
-		$usernameIncorrect = count($user) == 0;
+		$userExists = count($user) != 0;
 
-		echo $password . '<br>';
-		echo $user["password"] . '<br>';
-		password_verify($password, $user["password"]);
+		if(!$userExists) {
+			$error = "Gebruiker bestaat niet";
+		}
 
-		if(!$usernameIncorrect && password_verify($password, $user["password"])) {
+		if(!$error && password_verify($password, $user["password"])) {
 			$_SESSION["user"] = $user;
 			header("Location: /");
-		} else {
-			$passwordIncorrect = true;
+		} else if(!$error) {
+			$error = "Wachtwoord onjuist!";
 		}
 	}
 ?>
@@ -37,27 +36,26 @@
 	<link rel="stylesheet" href="/resources/style/inloggen.css" />
 	<link rel="stylesheet" href="/resources/style/fonts.css" />
 	<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/resources/images/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="../resources/style/genre.css">
+	<link rel="icon" href="/resources/images/favicon.ico" type="image/x-icon">
 	<title>Fletnix - Inloggen</title>
 </head>
 <body>
-	<!-- <?php require("../includes/header.php") ?> -->
+	<?php require("../includes/header.php") ?>
 
 	<main>
 		<div class="container">
 			<div class="login">
 				<div class="title">
 					<h1><span class="underline">Inloggen</span></h1>
-					<p>Of <a href="./registreren.html">registreer</a> voor een account</p>
+					<p>Of <a href="/registreren">registreer</a> voor een account</p>
 				</div>
 
 				<div class="box">
 					<form method="post">
-						<input type="email" name="email" id="email" placeholder="E-mail adres">
+						<input type="email" name="email" id="email" placeholder="E-mailadres">
 						<input type="password" name="password" id="password" placeholder="Wachtwoord">
 
-						<?= $usernameIncorrect ? "Gebruikersnaam incorrect" : "" ?>
-						<?= $passwordIncorrect ? "Wachtwoord incorrect" : "" ?>
+						<?= $error ? "<b>$error</b>" : "" ?>
 
 						<button type="submit">log in</button>
 					</form>

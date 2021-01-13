@@ -101,3 +101,16 @@ function getUser($email) {
 		)
 	);
 }
+
+function addUser($firstName, $lastName, $email, $password) {
+	dbQuery(
+		"INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`) VALUES (':firstName', ':lastName', ':email', ':password')",
+		array(
+			":firstName" => $firstName,
+			":lastName" => $lastName,
+			":email" => $email,
+			":password" => password_hash($password, PASSWORD_DEFAULT)
+		),
+		true
+	);
+}
