@@ -1,36 +1,33 @@
 <?php
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 	require_once("../includes/helpers/queries.php");
 
+	$notFound = false;
+
 	if(isset($_GET["id"])) {
-		$movie = getMovieById($_GET["id"]);
-		if($movie) {
-			$id = $movie["id"];
-			$title = $movie["title"];
-			$publication_date = $movie["publication_date"];
-			$runtime = $movie["runtime"];
-			$cast = $movie["cast"];
-			$story = $movie["story"];
-			$facts = $movie["facts"];
-			$imageUrl = "/resources/images/posters/" . $id . ".png";
-		} else {
-			$title = "Film niet gevonden";
-			$publication_date = "niet gevonden";
-			$runtime = "niet gevonden";
-			$cast = "niet gevonden";
-			$story = "niet gevonden";
-			$facts = "niet gevonden";
-		}
+		$id = $_GET["id"];
+		$movie = getMovieById($id);
+		$imageUrl = "/resources/images/posters/" . $id . ".png";
+
+		if(!$movie) $notFound = true;
 	} else {
-		$title = "Film niet gevonden";
-		$publication_date = "niet gevonden";
-		$runtime = "niet gevonden";
-		$cast = "niet gevonden";
-		$story = "niet gevonden";
-		$facts = "niet gevonden";
+		$notFound = true;
+	}
+
+	if($notFound) {
+		$movie = array(
+			"id" => -1,
+			"title" => "niet gevonden",
+			"publication_date" => "niet gevonden",
+			"runtime" => "niet gevonden",
+			"facts" => "niet gevonden",
+			"cast" => "niet gevonden",
+			"story" => "niet gevonden"
+		);
+		$imageUrl = "/resources/images/posters/not_found.png";
 	}
 ?>
 
@@ -61,23 +58,23 @@
 				</div>
 
 				<div class="text">
-					<h1><?= $title ?></h1>
-					<h4><?= $publication_date ?> - <?= $runtime ?></h4>
-					<button><a href="play.php?id=<?= $id ?>">speel af</a></button>
+					<h1><?= $movie["title"] ?></h1>
+					<h4><?= $movie["publication_date"] ?> - <?= $movie["runtime"] ?></h4>
+					<button><a href="play.php?id=<?= $movie["id"] ?>">speel af</a></button>
 
 					<h2>Facts</h2>
 					<p>
-						<?= $facts ?>
+						<?= $movie["facts"] ?>
 					</p>
 
 					<h2>De Cast</h2>
 					<p>
-						<?= str_replace("\n",  "<br>", $cast) ?>
+						<?= str_replace("\n",  "<br>", $movie["cast"]) ?>
 					</p>
 					
 					<h2>Het Verhaal</h2>
 					<p>
-					<?= $story ?>
+					<?= $movie["story"] ?>
 					</p>
 				</div>
 			</div>
