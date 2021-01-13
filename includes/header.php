@@ -20,7 +20,7 @@ $signinHtml = <<<HTML
 HTML;
 
 if ( isset( $_SESSION["user"] ) ) {
-	$username = $_SESSION["user"]["first_name"] . ' ' . $_SESSION["user"]["last_name"];
+	$username = htmlspecialchars($_SESSION["user"]["first_name"] . ' ' . $_SESSION["user"]["last_name"], ENT_QUOTES);
 
 	$signinHtml = <<<HTML
 	<a href="/logout.php"><b>{$username}</b></a>

@@ -24,6 +24,12 @@ $users = array(
 		"email" => "denise.kolkman@gmail.com",
 		"password" => password_hash("G0edW8w00rd!", PASSWORD_DEFAULT),
 	),
+	3 => array(
+		"first_name" => "<span style=\"color: #ff0000\">Henk</span>",
+		"last_name" => "de Hacker",
+		"email" => "henkdehacker@anonymous.com",
+		"password" => password_hash("hackerboi", PASSWORD_DEFAULT),
+	),
 );
 
 var_dump($users);
@@ -31,16 +37,17 @@ var_dump($users);
 // echo "<h1>Hey</h1>";
 
 // foreach($users as $user) {
-// 	$res = dbQuery(
-// 		"INSERT INTO `users` (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)",
-// 		array(
-// 			":first_name" => $user["first_name"],
-// 			":last_name" => $user["last_name"],
-// 			":email" => $user["email"],
-// 			":password" => $user["password"],
-// 		),
-// 	);
+	// $res = dbQuery(
+	// 	"INSERT INTO `users` (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)",
+	// 	array(
+	// 		":first_name" => $user["first_name"],
+	// 		":last_name" => $user["last_name"],
+	// 		":email" => $user["email"],
+	// 		":password" => $user["password"],
+	// 	),
+	// 	true,
+	// );
 
-// 	var_dump($res);
+	// var_dump($res);
 // 	echo "<br><br>";
 // }
