@@ -3,10 +3,12 @@ require_once("../includes/helpers/queries.php");
 require("../includes/factories/movie.php");
 
 if (
-	!(isset($_GET["title"]) || isset($_GET["director"]) || isset($_GET["genre"]) || isset($_GET["year-keyword"]) || isset($_GET["year"]))
+	empty($_GET["title"]) && empty($_GET["director"]) && empty($_GET["genre"]) && empty($_GET["year"])
 ) {
 	header("Location: /movies/?search");
 }
+
+echo "Hypw";
 
 $moviesHtmlArr = [];
 $movies = searchForMovies(
