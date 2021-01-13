@@ -56,7 +56,12 @@
 				<div class="text">
 					<h1><?= $movie["title"] ?></h1>
 					<h4><?= $movie["publication_date"] ?> - <?= $movie["runtime"] ?></h4>
-					<button><a href="play.php?id=<?= $movie["id"] ?>">speel af</a></button>
+					<form action="/play/" method="get">
+						<button type="submit">
+							<p>speel af</p>
+						</button>
+						<input name="id" type="hidden" value="<?= $movie["id"] ?>">
+					</form>
 
 					<h2>Facts</h2>
 					<p>

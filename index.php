@@ -13,13 +13,13 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="./resources/style/normalize.css" />
-	<link rel="stylesheet" href="./resources/style/variables.css" />
-	<link rel="stylesheet" href="./resources/style/fonts.css" />
-	<link rel="stylesheet" href="./resources/style/main.css" />
-	<link rel="stylesheet" href="./resources//style/home.css" />
-	<link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="../resources/style/genre.css">
+	<link rel="stylesheet" href="/resources/style/normalize.css" />
+	<link rel="stylesheet" href="/resources/style/variables.css" />
+	<link rel="stylesheet" href="/resources/style/fonts.css" />
+	<link rel="stylesheet" href="/resources/style/main.css" />
+	<link rel="stylesheet" href="/resources//style/home.css" />
+	<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/resources/images/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="/resources/style/genre.css">
 	<title>Fletnix - Home</title>
 </head>
 <body>

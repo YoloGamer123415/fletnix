@@ -43,7 +43,7 @@ div.container div.text h4 {
 	margin-top: 0;
 }
 
-main div.container a {
+main div.container b {
 	color: var(--main-bg-darker);
 	width: 100%;
 	height: 100%;
